@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from "react";
 import './App.css';
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+import {navs} from "./config/navs";
+import {CurrentPageContext} from "./config/createContext";
+//import {DispatchCurrentPageContext} from "./config/createContext";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App = () => {
+  const [page, setPage] = useState(navs[0]);
+  const changePage = (newPage: string) => {
+      setPage(newPage);
+  }
+  return(
+    <CurrentPageContext.Provider value={page}>
+        {/*<DispatchCurrentPageContext.Provider value={setPage}>*/}
+      <div className="container-fluid">
+        <Header changePage={changePage}/>
+        <Main page={page}/>
+        {/*  <Main />*/}
+        <Footer/>
+      </div>
+            {/*</DispatchCurrentPageContext.Provider>*/}
+    </CurrentPageContext.Provider>
   );
+
 }
 
 export default App;
