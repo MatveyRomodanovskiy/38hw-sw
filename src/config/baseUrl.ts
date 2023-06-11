@@ -1,0 +1,1 @@
+export const base_url = 'https://sw-info-api.herokuapp.com'

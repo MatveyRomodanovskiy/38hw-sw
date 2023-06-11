@@ -1,0 +1,14 @@
+{ "main":  "./Images/main.jpg",
+
+  "friend_pathes": [
+    "./Images/friend1.jpg",
+    "./Images/friend2.jpg",
+    "./Images/friend3.jpg",
+    "./Images/friend4.jpg",
+    "./Images/friend5.jpg",
+    "./Images/friend6.jpg",
+    "./Images/friend7.jpg",
+    "./Images/friend8.jpg",
+    "./Images/friend9.jpg"
+  ]
+}
